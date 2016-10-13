@@ -1,6 +1,3 @@
-# RED ADP eslint config
-.eslintrc file for RED ADP
-
 #### What is this?
 This is the standard eslint config for ADP projects.
 
