@@ -27,7 +27,7 @@ npm i -D eslint && \
       "browser": true,
       "node": true
     },
-     "plugins" : [
+    "plugins" : [
       "import",
       "react",
       "jsx-a11y"
