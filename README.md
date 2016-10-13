@@ -27,6 +27,11 @@ npm i -D eslint && \
       "browser": true,
       "node": true
     },
+     "plugins" : [
+      "import",
+      "react",
+      "jsx-a11y"
+    ],
     "rules": {
       "max-len": 0,
       "global-require": 0,
