@@ -4,7 +4,7 @@
 #### What is this?
 This is the standard eslint config for ADP projects.
 
-#### How to use this file:
+#### What should I do now?
 
 1) Run this command:
 
