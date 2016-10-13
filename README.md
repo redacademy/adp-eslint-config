@@ -36,7 +36,7 @@ npm i -D eslint && \
       "max-len": 0,
       "global-require": 0,
       "no-case-declarations": 0,
-      "no-param-reassign": 0,
+      "no-param-reassign": 1,
       "react/prefer-stateless-function": 0,
       "react/jsx-no-bind": 0
     }
