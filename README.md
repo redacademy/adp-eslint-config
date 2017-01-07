@@ -3,42 +3,76 @@ This is the standard eslint config for ADP projects.
 
 #### What should I do now?
 
-1) Run this command:
+1) Run these commands:
 
 ```bash
 
-npm i -D eslint && \
-         babel-eslint && \
-         eslint-config-airbnb && \
-         eslint-loader && \
-         eslint-plugin-import && \
-         eslint-plugin-jsx-a11y && \
-         eslint-plugin-react
+npm i -D eslint
+npm i -D babel-eslint
+npm i -D eslint-loader
+npm i -D eslint-config-airbnb
+
+```
+
+2) Then install the airbnb eslint and peer dependencies
+
+```bash
+
+(
+  export PKG=eslint-config-airbnb;
+  npm info "$PKG@latest" peerDependencies --json | command sed 's/[\{\},]//g ; s/: /@/g' | xargs npm install --save-dev "$PKG@latest"
+)
          
 ```
 
-2) Include the following in your `package.json`
+3) Include the following in your `package.json`
 
 ```json
 "eslintConfig": {
-    "parser": "babel-eslint",
-    "extends": "airbnb",
-    "env": {
-      "browser": true,
-      "node": true
-    },
-    "plugins" : [
-      "import",
-      "react",
-      "jsx-a11y"
-    ],
-    "rules": {
-      "max-len": 0,
-      "global-require": 0,
-      "no-case-declarations": 0,
-      "no-param-reassign": 1,
-      "react/prefer-stateless-function": 0,
-      "react/jsx-no-bind": 0
-    }
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins" : [
+    "import",
+    "react",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "max-len": 0,
+    "global-require": 0,
+    "no-case-declarations": 0,
+    "no-param-reassign": 1,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-no-bind": 0
   }
+}
+```
+
+4) Enable ESLint in your code editor, and save the following in a file named `.eslintrc` in the project root
+
+```json
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins" : [
+    "import",
+    "react",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "max-len": 0,
+    "global-require": 0,
+    "no-case-declarations": 0,
+    "no-param-reassign": 1,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-no-bind": 0
+  }
+}
 ```
