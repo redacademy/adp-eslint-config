@@ -6,12 +6,9 @@ This is the standard eslint config for ADP projects.
 1) Run these commands:
 
 ```bash
-
 npm i -D eslint
 npm i -D babel-eslint
 npm i -D eslint-loader
-npm i -D eslint-config-airbnb
-
 ```
 
 2) Then install the airbnb eslint and peer dependencies
@@ -54,7 +51,7 @@ npm i -D eslint-config-airbnb
 ## For NodeJS Projects
 
 ```json
- {
+ "eslintConfig": {
   "extends": "airbnb",
   "env": {
     "node": true
@@ -69,3 +66,46 @@ npm i -D eslint-config-airbnb
 ```
 
 4) Enable ESLint in your code editor, and save the following in a file named `.eslintrc` in the project root
+
+## For Browser-based React Apps
+
+```json
+{
+  "parser": "babel-eslint",
+  "extends": "airbnb",
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "plugins" : [
+    "import",
+    "react",
+    "jsx-a11y"
+  ],
+  "rules": {
+    "max-len": 0,
+    "global-require": 0,
+    "no-case-declarations": 0,
+    "no-param-reassign": 1,
+    "react/prefer-stateless-function": 0,
+    "react/jsx-no-bind": 0
+  }
+}
+```
+
+## For NodeJS Projects
+
+```json
+ {
+  "extends": "airbnb",
+  "env": {
+    "node": true
+  },
+  "rules": {
+    "max-len": 0,
+    "global-require": 0,
+    "no-case-declarations": 0,
+    "no-param-reassign": 1
+  }
+}
+```
